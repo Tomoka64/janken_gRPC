@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package jankenserve;
+
+message Janken {
+  int64 janken = 1;
+}
+
+message Result {
+  string result = 1;
+  string koma = 2;
+}
+
+service Tasks {
+  rpc Jankening(Janken) returns(Result) {}
+}
